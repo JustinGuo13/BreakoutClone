@@ -2,6 +2,7 @@ extends RigidBody2D
 
 
 # Declare member variables here. Examples:
+
 export var speedup = 100
 export var maxspeed = 2000
 
@@ -9,7 +10,6 @@ export var maxspeed = 2000
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_physics_process(true)
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
@@ -26,7 +26,13 @@ func _physics_process(_delta):
 			var velocity = direction.normalized() * min(speed + speedup, maxspeed)
 			set_linear_velocity(velocity)
 			print(str(speed+speedup))
+		
 			
-	if get_position().y > get_viewport_rect().end.y: 
-		print("ball died")
-		queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+	get_node("/root/World").life -= 1
+	get_node("/root/World").current_ball_count -= 1
+	get_node("/root/World").game_over()
+	print("ball died")
+	
