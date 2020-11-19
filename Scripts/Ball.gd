@@ -18,9 +18,14 @@ func _physics_process(_delta):
 	for body in bodies:
 		if body.is_in_group("Bricks"):
 			get_node("/root/World").score += 100
+			get_node("/root/World/BrickHit").play()
 			body.queue_free()
+		
+		if 	body.get_name() == "Walls":
+			get_node("/root/World/Walls/WallHit").play()
 			
 		if body.get_name() == "Paddle":
+			get_node("/root/World/Paddle/PaddleHit").play()
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Anchor").get_global_position()
 			var velocity = direction.normalized() * min(speed + speedup, maxspeed)

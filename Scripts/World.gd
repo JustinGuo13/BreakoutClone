@@ -18,4 +18,13 @@ func set_current_ball_count(value):
 	
 func game_over():
 	if(life == 0):
+		get_node("BGM").stop()
+		get_node("GameOver").play()
+		# Wait 10 seconds, then resume execution. 
+#		yield(get_tree().create_timer(10), "timeout")
 		get_tree().reload_current_scene()
+		
+#func _input(event):
+#	if event is InputEventKey and event.pressed:
+#		if event.scancode == KEY_R:
+#			get_tree().reload_current_scene()

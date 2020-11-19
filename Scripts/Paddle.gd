@@ -22,5 +22,5 @@ func _input(_event):
 		ball.set_position(get_position() - Vector2(0, 16))
 		get_tree().get_root().add_child(ball)
 		get_node("/root/World").current_ball_count += 1
-		
+	
 		
