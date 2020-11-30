@@ -24,7 +24,7 @@ func _physics_process(_delta):
 		if 	body.get_name() == "Walls":
 			get_node("/root/World/Walls/WallHit").play()
 			
-		if body.get_name() == "Paddle":
+		if body.is_in_group() == "Paddle":
 			get_node("/root/World/Paddle/PaddleHit").play()
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Anchor").get_global_position()

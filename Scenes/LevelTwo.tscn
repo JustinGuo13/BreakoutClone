@@ -63,7 +63,8 @@ stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="Paddle2" type="KinematicBody2D" parent="."]
-position = Vector2( 930.52, 31.1821 )
+position = Vector2( 930.52, 40.6958 )
+rotation = -3.14159
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="Paddle2"]
