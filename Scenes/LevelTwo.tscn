@@ -34,7 +34,9 @@ font_data = SubResource( 4 )
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Paddle" type="KinematicBody2D" parent="."]
+[node name="Paddle" type="KinematicBody2D" parent="." groups=[
+"Paddle",
+]]
 position = Vector2( 928, 1024 )
 script = ExtResource( 3 )
 
@@ -62,7 +64,9 @@ __meta__ = {
 stream = ExtResource( 7 )
 volume_db = -15.0
 
-[node name="Paddle2" type="KinematicBody2D" parent="."]
+[node name="Paddle2" type="KinematicBody2D" parent="." groups=[
+"Paddle",
+]]
 position = Vector2( 930.52, 40.6958 )
 rotation = -3.14159
 script = ExtResource( 8 )
