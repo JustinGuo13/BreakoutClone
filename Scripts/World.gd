@@ -1,10 +1,17 @@
 extends Node2D
 
-
+var ballMaxSpeed = get_node("res://MiniScenes/Ball.tscn").maxspeed setget set_ball_max_speed
+var maxspeed = 2000
 var score = 0 setget set_score
 var life = 3 setget set_life
 var current_ball_count = 0 setget set_current_ball_count
 
+func set_ball_max_speed(maxspeed):
+	if score >= 1000:
+		ballMaxSpeed = maxspeed*1.25
+	if score >= 2000:
+		ballMaxSpeed = maxspeed*1.5
+	
 func set_score(value):
 	score = value
 	get_node("Score").set_text("SCORE: " + str(score))
