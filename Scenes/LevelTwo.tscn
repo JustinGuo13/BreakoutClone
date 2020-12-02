@@ -10,7 +10,7 @@
 [ext_resource path="res://Scripts/Paddle2.gd" type="Script" id=8]
 [ext_resource path="res://SoundEffects/BrickHit.wav" type="AudioStream" id=9]
 [ext_resource path="res://SoundEffects/Zander-Noriega-Jazz-Solo-Game-Over.wav" type="AudioStream" id=10]
-[ext_resource path="res://SoundEffects/WallHit.wav" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/PaddleVertical.gd" type="Script" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.0
@@ -37,7 +37,7 @@ script = ExtResource( 4 )
 [node name="Paddle" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 928, 1024 )
+position = Vector2( 960, 1030 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Paddle"]
@@ -67,7 +67,7 @@ volume_db = -15.0
 [node name="Paddle2" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 928, 50 )
+position = Vector2( 960, 50 )
 rotation = -3.14159
 script = ExtResource( 8 )
 
@@ -95,283 +95,339 @@ __meta__ = {
 stream = ExtResource( 7 )
 volume_db = -15.0
 
-[node name="Walls" type="StaticBody2D" parent="."]
+[node name="Paddle3" type="KinematicBody2D" parent="." groups=[
+"Paddle",
+]]
+position = Vector2( 50, 540 )
+rotation = -4.71239
+script = ExtResource( 11 )
 
-[node name="WallHit" type="AudioStreamPlayer" parent="Walls"]
-stream = ExtResource( 11 )
-volume_db = -10.0
+[node name="Sprite" type="Sprite" parent="Paddle3"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle3"]
+rotation = 1.5708
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddle3"]
+position = Vector2( 0, 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PaddleHit" type="AudioStreamPlayer" parent="Paddle3"]
+stream = ExtResource( 7 )
+volume_db = -15.0
+
+[node name="Paddle4" type="KinematicBody2D" parent="." groups=[
+"Paddle",
+]]
+position = Vector2( 1870, 540 )
+rotation = -1.5708
+script = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="Paddle4"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle4"]
+rotation = 1.5708
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Anchor" type="Position2D" parent="Paddle4"]
+position = Vector2( 0, 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PaddleHit" type="AudioStreamPlayer" parent="Paddle4"]
+stream = ExtResource( 7 )
+volume_db = -15.0
 
 [node name="Bricks" type="Node2D" parent="."]
 
 [node name="Brick" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 472.436 )
+position = Vector2( 1014.14, 491.863 )
 
 [node name="Brick2" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 472.436 )
+position = Vector2( 758.141, 492.863 )
 
 [node name="Brick6" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 472.436 )
+position = Vector2( 630.141, 492.863 )
 
 [node name="Brick7" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 472.436 )
+position = Vector2( 374.141, 491.863 )
 
 [node name="Brick8" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 472.436 )
+position = Vector2( 502.141, 491.863 )
 
 [node name="Brick9" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 472.436 )
+position = Vector2( 502.141, 305.863 )
 
 [node name="Brick10" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 472.436 )
+position = Vector2( 374.141, 305.863 )
 
 [node name="Brick3" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 472.436 )
+position = Vector2( 1270.14, 491.863 )
 
 [node name="Brick11" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 472.436 )
-
-[node name="Brick12" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 472.436 )
-
-[node name="Brick13" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 472.436 )
-
-[node name="Brick14" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 472.436 )
-
-[node name="Brick15" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 472.436 )
+position = Vector2( 1398.14, 491.863 )
 
 [node name="Brick4" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 472.436 )
+position = Vector2( 1142.14, 491.863 )
 
 [node name="Brick5" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 472.436 )
+position = Vector2( 886.141, 491.863 )
 
 [node name="Brick31" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 408.436 )
+position = Vector2( 1014.14, 427.863 )
 
 [node name="Brick32" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 408.436 )
+position = Vector2( 758.141, 428.863 )
 
 [node name="Brick33" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 408.436 )
+position = Vector2( 630.141, 428.863 )
 
 [node name="Brick34" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 408.436 )
+position = Vector2( 374.141, 427.863 )
 
 [node name="Brick35" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 408.436 )
+position = Vector2( 502.141, 427.863 )
 
 [node name="Brick36" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 408.436 )
+position = Vector2( 630.141, 308.427 )
 
 [node name="Brick37" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 408.436 )
+position = Vector2( 374.141, 242.863 )
+
+[node name="Brick99" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 502.141, 241.744 )
 
 [node name="Brick38" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 408.436 )
+position = Vector2( 1270.14, 427.863 )
 
 [node name="Brick39" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 408.436 )
-
-[node name="Brick40" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 408.436 )
-
-[node name="Brick41" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 408.436 )
+position = Vector2( 1398.14, 427.863 )
 
 [node name="Brick42" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 408.436 )
+position = Vector2( 1270.14, 307.427 )
 
 [node name="Brick43" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 408.436 )
+position = Vector2( 1398.14, 307.427 )
 
 [node name="Brick44" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 408.436 )
+position = Vector2( 1142.14, 427.863 )
 
 [node name="Brick45" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 408.436 )
+position = Vector2( 886.141, 427.863 )
 
 [node name="Brick46" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 344.436 )
+position = Vector2( 1014.14, 363.863 )
 
 [node name="Brick47" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 344.436 )
+position = Vector2( 758.141, 364.863 )
 
 [node name="Brick48" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 344.436 )
+position = Vector2( 630.141, 364.863 )
 
 [node name="Brick49" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 344.436 )
+position = Vector2( 374.141, 363.863 )
 
 [node name="Brick50" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 344.436 )
+position = Vector2( 502.141, 363.863 )
 
 [node name="Brick51" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 344.436 )
+position = Vector2( 886.141, 307.863 )
 
 [node name="Brick52" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 344.436 )
+position = Vector2( 757.903, 307.427 )
 
 [node name="Brick53" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 344.436 )
+position = Vector2( 1270.14, 363.863 )
 
 [node name="Brick54" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 344.436 )
-
-[node name="Brick55" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 344.436 )
-
-[node name="Brick56" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 344.436 )
+position = Vector2( 1398.14, 363.863 )
 
 [node name="Brick57" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 344.436 )
+position = Vector2( 1014.14, 307.427 )
 
 [node name="Brick58" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 344.436 )
+position = Vector2( 1142.14, 307.427 )
 
 [node name="Brick59" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 344.436 )
+position = Vector2( 1142.14, 363.863 )
 
 [node name="Brick60" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 344.436 )
+position = Vector2( 886.141, 363.863 )
 
 [node name="Brick16" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 536.436 )
+position = Vector2( 1014.14, 555.863 )
 
 [node name="Brick17" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 536.436 )
+position = Vector2( 758.141, 556.863 )
 
 [node name="Brick18" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 536.436 )
+position = Vector2( 630.141, 556.863 )
 
 [node name="Brick19" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 536.436 )
+position = Vector2( 374.141, 555.863 )
 
 [node name="Brick20" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 536.436 )
+position = Vector2( 502.141, 555.863 )
 
 [node name="Brick21" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 536.436 )
+position = Vector2( 502.141, 748.427 )
 
 [node name="Brick22" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 536.436 )
+position = Vector2( 374.141, 748.427 )
 
 [node name="Brick23" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 536.436 )
+position = Vector2( 1270.14, 555.863 )
 
 [node name="Brick24" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 536.436 )
-
-[node name="Brick25" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 536.436 )
-
-[node name="Brick26" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 536.436 )
-
-[node name="Brick27" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 536.436 )
-
-[node name="Brick28" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 536.436 )
+position = Vector2( 1398.14, 555.863 )
 
 [node name="Brick29" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 536.436 )
+position = Vector2( 1142.14, 555.863 )
 
 [node name="Brick30" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 536.436 )
+position = Vector2( 886.141, 555.863 )
 
 [node name="Brick61" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 600.436 )
+position = Vector2( 1014.14, 619.863 )
 
 [node name="Brick62" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 600.436 )
+position = Vector2( 758.141, 620.863 )
 
 [node name="Brick63" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 600.436 )
+position = Vector2( 630.141, 620.863 )
 
 [node name="Brick64" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 600.436 )
+position = Vector2( 374.141, 619.863 )
 
 [node name="Brick65" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 600.436 )
+position = Vector2( 502.141, 619.863 )
 
 [node name="Brick66" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 600.436 )
+position = Vector2( 1014.14, 747.427 )
 
 [node name="Brick67" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 600.436 )
+position = Vector2( 886.141, 747.427 )
 
 [node name="Brick68" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 600.436 )
+position = Vector2( 1270.14, 619.863 )
 
 [node name="Brick69" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 600.436 )
-
-[node name="Brick70" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 600.436 )
-
-[node name="Brick71" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 600.436 )
+position = Vector2( 1398.14, 619.863 )
 
 [node name="Brick72" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 600.436 )
+position = Vector2( 1270.14, 747.427 )
 
 [node name="Brick73" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 600.436 )
+position = Vector2( 1398.14, 747.427 )
 
 [node name="Brick74" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 600.436 )
+position = Vector2( 1142.14, 619.863 )
 
 [node name="Brick75" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 600.436 )
+position = Vector2( 886.141, 619.863 )
 
 [node name="Brick76" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 960, 664.436 )
+position = Vector2( 1014.14, 683.863 )
 
 [node name="Brick77" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 704, 664.436 )
+position = Vector2( 758.141, 684.863 )
 
 [node name="Brick78" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 576, 664.436 )
+position = Vector2( 630.141, 684.863 )
 
 [node name="Brick79" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 320, 664.436 )
+position = Vector2( 374.141, 683.863 )
 
 [node name="Brick80" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 448, 664.436 )
+position = Vector2( 502.141, 683.863 )
 
 [node name="Brick81" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 192, 664.436 )
+position = Vector2( 630.141, 748.427 )
 
 [node name="Brick82" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 64, 664.436 )
+position = Vector2( 758.141, 746.427 )
 
 [node name="Brick83" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1216, 664.436 )
+position = Vector2( 1270.14, 683.863 )
 
 [node name="Brick84" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1344, 664.436 )
+position = Vector2( 1398.14, 683.863 )
+
+[node name="Brick92" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1398.14, 243.427 )
+
+[node name="Brick12" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 491.863 )
+
+[node name="Brick40" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 427.863 )
+
+[node name="Brick55" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 307.427 )
+
+[node name="Brick56" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 363.863 )
+
+[node name="Brick25" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 555.863 )
+
+[node name="Brick70" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 619.863 )
 
 [node name="Brick85" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1472, 664.436 )
+position = Vector2( 1525.28, 747.427 )
 
 [node name="Brick86" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1600, 664.436 )
+position = Vector2( 1525.28, 683.863 )
 
-[node name="Brick87" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1728, 664.436 )
+[node name="Brick100" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1525.28, 243.427 )
+
+[node name="Brick93" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1270.14, 243.427 )
+
+[node name="Brick94" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1142.14, 243.427 )
+
+[node name="Brick95" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 1014.14, 243.427 )
+
+[node name="Brick96" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 886.141, 243.427 )
+
+[node name="Brick97" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 758.141, 243.427 )
+
+[node name="Brick98" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 630.141, 243.427 )
 
 [node name="Brick88" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1856, 664.436 )
+position = Vector2( 1142.14, 747.427 )
 
 [node name="Brick89" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 1088, 664.436 )
+position = Vector2( 1142.14, 683.863 )
 
 [node name="Brick90" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 832, 664.436 )
+position = Vector2( 886.141, 683.863 )
 
 [node name="Score" type="Label" parent="."]
 margin_left = 32.0
@@ -439,14 +495,6 @@ volume_db = -10.0
 
 [editable path="Bricks/Brick11"]
 
-[editable path="Bricks/Brick12"]
-
-[editable path="Bricks/Brick13"]
-
-[editable path="Bricks/Brick14"]
-
-[editable path="Bricks/Brick15"]
-
 [editable path="Bricks/Brick4"]
 
 [editable path="Bricks/Brick5"]
@@ -465,13 +513,11 @@ volume_db = -10.0
 
 [editable path="Bricks/Brick37"]
 
+[editable path="Bricks/Brick99"]
+
 [editable path="Bricks/Brick38"]
 
 [editable path="Bricks/Brick39"]
-
-[editable path="Bricks/Brick40"]
-
-[editable path="Bricks/Brick41"]
 
 [editable path="Bricks/Brick42"]
 
@@ -499,10 +545,6 @@ volume_db = -10.0
 
 [editable path="Bricks/Brick54"]
 
-[editable path="Bricks/Brick55"]
-
-[editable path="Bricks/Brick56"]
-
 [editable path="Bricks/Brick57"]
 
 [editable path="Bricks/Brick58"]
@@ -529,14 +571,6 @@ volume_db = -10.0
 
 [editable path="Bricks/Brick24"]
 
-[editable path="Bricks/Brick25"]
-
-[editable path="Bricks/Brick26"]
-
-[editable path="Bricks/Brick27"]
-
-[editable path="Bricks/Brick28"]
-
 [editable path="Bricks/Brick29"]
 
 [editable path="Bricks/Brick30"]
@@ -558,10 +592,6 @@ volume_db = -10.0
 [editable path="Bricks/Brick68"]
 
 [editable path="Bricks/Brick69"]
-
-[editable path="Bricks/Brick70"]
-
-[editable path="Bricks/Brick71"]
 
 [editable path="Bricks/Brick72"]
 
@@ -589,11 +619,25 @@ volume_db = -10.0
 
 [editable path="Bricks/Brick84"]
 
+[editable path="Bricks/Brick12"]
+
+[editable path="Bricks/Brick40"]
+
+[editable path="Bricks/Brick55"]
+
+[editable path="Bricks/Brick56"]
+
+[editable path="Bricks/Brick25"]
+
+[editable path="Bricks/Brick70"]
+
 [editable path="Bricks/Brick85"]
 
 [editable path="Bricks/Brick86"]
 
-[editable path="Bricks/Brick87"]
+[editable path="Bricks/Brick93"]
+
+[editable path="Bricks/Brick96"]
 
 [editable path="Bricks/Brick88"]
 
