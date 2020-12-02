@@ -5,7 +5,7 @@ extends RigidBody2D
 
 export var speedup = 100
 export var maxspeed = 2000
-
+var bounce_count = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,15 +16,14 @@ func _physics_process(_delta):
 	var bodies = get_colliding_bodies()
 	
 	for body in bodies:
-		if body.is_in_group("Bricks"):
-			get_node("/root/World").score += 100
-			get_node("/root/World/BrickHit").play()
-			body.queue_free()
+		if body.is_in_group("Bricks"):			
+				get_node("/root/World").score += 100
+				body.queue_free() #destroy the brick
 		
 		if 	body.get_name() == "Walls":
 			get_node("/root/World/Walls/WallHit").play()
 			
-		if body.is_in_group("Paddle"):
+		if body.get_name() == "Paddle":
 			get_node("/root/World/Paddle/PaddleHit").play()
 			var speed = get_linear_velocity().length()
 			var direction = get_position() - body.get_node("Anchor").get_global_position()

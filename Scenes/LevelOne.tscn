@@ -33,9 +33,7 @@ font_data = SubResource( 4 )
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Paddle" type="KinematicBody2D" parent="." groups=[
-"Paddle",
-]]
+[node name="Paddle" type="KinematicBody2D" parent="."]
 position = Vector2( 928, 1024 )
 script = ExtResource( 3 )
 
