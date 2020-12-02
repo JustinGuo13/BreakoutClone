@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Textures/png/paddleBlu.png" type="Texture" id=1]
 [ext_resource path="res://MiniScenes/BrickOne.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://SoundEffects/BrickHit.wav" type="AudioStream" id=9]
 [ext_resource path="res://SoundEffects/Zander-Noriega-Jazz-Solo-Game-Over.wav" type="AudioStream" id=10]
 [ext_resource path="res://Scripts/PaddleVertical.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Control.gd" type="Script" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.0
@@ -22,6 +23,8 @@ font_path = "res://Fonts/radiospacebitmap.ttf"
 
 [sub_resource type="DynamicFont" id=3]
 size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 2 )
 
 [sub_resource type="DynamicFontData" id=4]
@@ -29,7 +32,29 @@ font_path = "res://Fonts/radiospacebitmap.ttf"
 
 [sub_resource type="DynamicFont" id=5]
 size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Fonts/8-BIT WONDER.TTF"
+
+[sub_resource type="DynamicFont" id=7]
+size = 50
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://Fonts/8-BIT WONDER.TTF"
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 8 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -208,13 +233,13 @@ position = Vector2( 374.141, 427.863 )
 position = Vector2( 502.141, 427.863 )
 
 [node name="Brick36" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 630.141, 307.427 )
+position = Vector2( 630.141, 308.427 )
 
 [node name="Brick37" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 374.141, 242.863 )
 
 [node name="Brick99" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 502.141, 242.744 )
+position = Vector2( 502.141, 241.744 )
 
 [node name="Brick38" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 1270.14, 427.863 )
@@ -241,7 +266,7 @@ position = Vector2( 1014.14, 363.863 )
 position = Vector2( 758.141, 364.863 )
 
 [node name="Brick48" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 630.141, 365.863 )
+position = Vector2( 630.141, 364.863 )
 
 [node name="Brick49" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 374.141, 363.863 )
@@ -250,7 +275,7 @@ position = Vector2( 374.141, 363.863 )
 position = Vector2( 502.141, 363.863 )
 
 [node name="Brick51" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 886.141, 305.863 )
+position = Vector2( 886.141, 307.863 )
 
 [node name="Brick52" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 757.903, 307.427 )
@@ -476,6 +501,59 @@ volume_db = -15.0
 [node name="GameOver" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = -10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+pause_mode = 2
+visible = false
+margin_left = 928.0
+margin_top = 736.0
+margin_right = 1216.0
+margin_bottom = 864.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -288.0
+margin_top = -320.0
+margin_right = 64.0
+margin_bottom = -160.0
+custom_styles/panel = SubResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_top = 64.0
+margin_right = 172.0
+margin_bottom = 114.0
+custom_fonts/font = SubResource( 7 )
+text = "Paused"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/Control/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -264.0
+margin_top = 160.0
+margin_right = 288.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 9 )
+text = "Return to main menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/Control/Panel/MainMenu" to="CanvasLayer/Control" method="_on_MainMenu_pressed"]
 
 [editable path="Bricks/Brick"]
 
