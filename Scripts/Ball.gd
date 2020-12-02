@@ -21,7 +21,7 @@ func _physics_process(_delta):
 				get_node("/root/World/BrickHit").play()
 				body.queue_free() #destroy the brick
 		
-		if 	body.get_name() == "Walls":
+		if body.get_name() == "Walls":
 			get_node("/root/World/Walls/WallHit").play()
 			
 		if body.is_in_group("Paddle"):
@@ -31,8 +31,6 @@ func _physics_process(_delta):
 			var velocity = direction.normalized() * min(speed + speedup, maxspeed)
 			set_linear_velocity(velocity)
 			print(str(speed+speedup))
-		
-			
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
