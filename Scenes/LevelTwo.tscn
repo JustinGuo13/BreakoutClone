@@ -208,13 +208,13 @@ position = Vector2( 374.141, 427.863 )
 position = Vector2( 502.141, 427.863 )
 
 [node name="Brick36" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 630.141, 308.427 )
+position = Vector2( 630.141, 307.427 )
 
 [node name="Brick37" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 374.141, 242.863 )
 
 [node name="Brick99" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 502.141, 241.744 )
+position = Vector2( 502.141, 242.744 )
 
 [node name="Brick38" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 1270.14, 427.863 )
@@ -241,7 +241,7 @@ position = Vector2( 1014.14, 363.863 )
 position = Vector2( 758.141, 364.863 )
 
 [node name="Brick48" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 630.141, 364.863 )
+position = Vector2( 630.141, 365.863 )
 
 [node name="Brick49" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 374.141, 363.863 )
@@ -250,7 +250,7 @@ position = Vector2( 374.141, 363.863 )
 position = Vector2( 502.141, 363.863 )
 
 [node name="Brick51" parent="Bricks" instance=ExtResource( 2 )]
-position = Vector2( 886.141, 307.863 )
+position = Vector2( 886.141, 305.863 )
 
 [node name="Brick52" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 757.903, 307.427 )

@@ -3,24 +3,27 @@
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=1]
 [ext_resource path="res://Textures/png/ballBlue.png" type="Texture" id=2]
 
-[sub_resource type="PhysicsMaterial" id=6]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=2]
 radius = 24.0
 
 [node name="Ball" type="RigidBody2D"]
+position = Vector2( 592.661, 397.352 )
 mode = 2
-physics_material_override = SubResource( 6 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
+linear_velocity = Vector2( 200, -200 )
 linear_damp = 0.0
 angular_damp = 0.0
 script = ExtResource( 1 )
-speedup = 50
-maxspeed = 1000
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
@@ -30,7 +33,7 @@ __meta__ = {
 }
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource( 7 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
