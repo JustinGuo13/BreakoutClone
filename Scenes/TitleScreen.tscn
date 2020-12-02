@@ -71,9 +71,9 @@ __meta__ = {
 }
 
 [node name="PlayButton2" type="Button" parent="MainMenu"]
-margin_left = 1135.22
+margin_left = 1132.39
 margin_top = 339.696
-margin_right = 1460.22
+margin_right = 1457.39
 margin_bottom = 460.696
 rect_scale = Vector2( 1.21157, 1.04322 )
 custom_fonts/font = SubResource( 1 )
