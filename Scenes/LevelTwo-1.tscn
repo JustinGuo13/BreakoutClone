@@ -67,7 +67,7 @@ volume_db = -15.0
 [node name="Paddle2" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 928, 40.69 )
+position = Vector2( 928, 50 )
 rotation = -3.14159
 script = ExtResource( 8 )
 
@@ -98,7 +98,7 @@ volume_db = -15.0
 [node name="Paddle3" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 106.52, 548.696 )
+position = Vector2( 50, 550 )
 rotation = -4.71239
 script = ExtResource( 11 )
 
@@ -129,7 +129,7 @@ volume_db = -15.0
 [node name="Paddle4" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 1854.52, 548.696 )
+position = Vector2( 1879, 550 )
 rotation = -4.71239
 script = ExtResource( 11 )
 

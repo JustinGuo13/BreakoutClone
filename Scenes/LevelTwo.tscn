@@ -67,7 +67,7 @@ volume_db = -15.0
 [node name="Paddle2" type="KinematicBody2D" parent="." groups=[
 "Paddle",
 ]]
-position = Vector2( 930.52, 40.6958 )
+position = Vector2( 928, 50 )
 rotation = -3.14159
 script = ExtResource( 8 )
 
@@ -96,9 +96,6 @@ stream = ExtResource( 7 )
 volume_db = -15.0
 
 [node name="Walls" type="StaticBody2D" parent="."]
-
-[node name="Collision" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( 0, 1152, -64, 1152, -64, -64, 950.734, -374.421, 1984, -64, 1984, 1152, 1920, 1152, 1920, 0, 948.749, -310.204, 0, 0 )
 
 [node name="WallHit" type="AudioStreamPlayer" parent="Walls"]
 stream = ExtResource( 11 )
