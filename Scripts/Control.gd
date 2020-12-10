@@ -5,7 +5,7 @@ extends Control
 var notPaused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		if notPaused:
 			get_tree().paused = true
@@ -21,3 +21,5 @@ func _on_MainMenu_pressed():
 	print("Button Pressed")
 	get_tree().paused = false
 	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+	score.check1 = 0
+	score.check2 = 0

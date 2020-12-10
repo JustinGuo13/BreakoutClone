@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Textures/png/paddleBlu.png" type="Texture" id=1]
 [ext_resource path="res://MiniScenes/BrickOne.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://SoundEffects/Zander-Noriega-Jazz-Solo-Game-Over.wav" type="AudioStream" id=10]
 [ext_resource path="res://Scripts/PaddleVertical.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/Control.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Score.gd" type="Script" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.0
@@ -36,25 +37,25 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 4 )
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id=6]
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=7]
 font_path = "res://Fonts/8-BIT WONDER.TTF"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 50
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 6 )
+font_data = SubResource( 7 )
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=9]
 font_path = "res://Fonts/8-BIT WONDER.TTF"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 30
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
-font_data = SubResource( 8 )
+font_data = SubResource( 9 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 4 )
@@ -182,7 +183,9 @@ __meta__ = {
 stream = ExtResource( 7 )
 volume_db = -15.0
 
-[node name="Bricks" type="Node2D" parent="."]
+[node name="Bricks" type="Node2D" parent="." groups=[
+"Bricks",
+]]
 
 [node name="Brick" parent="Bricks" instance=ExtResource( 2 )]
 position = Vector2( 1014.14, 491.863 )
@@ -462,6 +465,7 @@ margin_bottom = 46.0
 custom_fonts/font = SubResource( 3 )
 text = "SCORE: 0
 "
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -523,7 +527,7 @@ margin_left = -288.0
 margin_top = -320.0
 margin_right = 64.0
 margin_bottom = -160.0
-custom_styles/panel = SubResource( 10 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -535,7 +539,7 @@ margin_left = -128.0
 margin_top = 64.0
 margin_right = 172.0
 margin_bottom = 114.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 text = "Paused"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -548,7 +552,7 @@ margin_left = -264.0
 margin_top = 160.0
 margin_right = 288.0
 margin_bottom = 224.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 text = "Return to main menu"
 __meta__ = {
 "_edit_use_anchors_": false
